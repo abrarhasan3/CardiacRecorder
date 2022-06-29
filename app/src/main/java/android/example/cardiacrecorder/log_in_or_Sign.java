@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class log_in_or_Sign extends AppCompatActivity {
 
@@ -17,8 +18,7 @@ public class log_in_or_Sign extends AppCompatActivity {
         setContentView(R.layout.activity_log_in_or_sign);
         Button button=findViewById(R.id.login_button);
         Button button1=findViewById(R.id.signup_button);
-        TextView textView=findViewById(R.id.forget);
-        textView.setPaintFlags(textView.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,12 +36,7 @@ public class log_in_or_Sign extends AppCompatActivity {
             }
         });
 
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
     }
 
 }
