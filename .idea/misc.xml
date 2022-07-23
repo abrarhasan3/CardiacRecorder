@@ -5,13 +5,28 @@
       <map>
         <entry key="..\:/academic/3-1/Project/Backup/CardiacRecorder/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/drawable-v24/button.xml" value="0.2595" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1425" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1425" />
         <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1465" />
-        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/activity_homepage.xml" value="0.264" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/drawable/menu_item_design.xml" value="0.1535" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/drawable/shape_circle_bg.xml" value="0.1425" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/drawable/shape_circle_progress.xml" value="0.1425" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/drawable/test.xml" value="0.1425" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/activity_homepage.xml" value="0.4" />
         <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/activity_log_in_or_sign.xml" value="0.264" />
-        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/activity_log_in_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/activity_log_in_page.xml" value="0.4" />
         <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/activity_main.xml" value="0.21666666666666667" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/activity_signup.xml" value="0.264" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/activity_statistics.xml" value="0.25416666666666665" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/alert_dialog.xml" value="0.264" />
         <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/button.xml" value="0.24010416666666667" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/custom_list_design.xml" value="0.264" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/fragment_graph_view.xml" value="0.25416666666666665" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/fragment_list_view.xml" value="0.25416666666666665" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/menu_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/layout/menu_item_design.xml" value="0.253125" />
+        <entry key="..\:/academic/3-1/Project/GIT/CardiacRecorder/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
