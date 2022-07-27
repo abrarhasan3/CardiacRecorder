@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ffffff">
+
+    <ImageView
+        android:id="@+id/Icon"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:src="@drawable/heart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="368dp"
+        android:layout_height="78dp"
+        android:fontFamily="monospace"
+        android:text="CardiacRecorder"
+        android:textAlignment="center"
+        android:textColor="#ff6b6b"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Icon"
+        app:layout_constraintVertical_bias="0.151" />
+
+    <TextView
+        android:id="@+id/Tagline"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:fontFamily="cursive"
+        android:text="Your Ultimate Heart Assistant!"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/developers"
+        android:layout_width="256dp"
+        android:layout_height="41dp"
+        android:fontFamily="monospace"
+        android:text="Developed by"
+        android:textAlignment="center"
+        android:textColor="#ff6b6b"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tagline"
+        app:layout_constraintVertical_bias="0.254" />
+
+    <TextView
+        android:id="@+id/devNames"
+        android:layout_width="261dp"
+        android:layout_height="58dp"
+        android:fontFamily="monospace"
+        android:text="ABRAR | SHOUMYA"
+        android:textAlignment="center"
+        android:textColor="#ff6b6b"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/developers"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
