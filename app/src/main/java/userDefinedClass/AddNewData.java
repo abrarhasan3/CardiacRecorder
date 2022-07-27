@@ -5,7 +5,7 @@ import android.content.ClipData;
 import java.util.Comparator;
 import java.util.Date;
 
-public class AddNewData {
+public class AddNewData{
     int systolic,diastolic, heartRate;
     String id,comment;
     Date date;
@@ -66,6 +66,4 @@ public class AddNewData {
     public Date getDate() {
         return date;
     }
-
-
 }
