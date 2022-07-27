@@ -5,7 +5,8 @@ import android.content.ClipData;
 import java.util.Comparator;
 import java.util.Date;
 
-public class AddNewData implements Comparable<AddNewData> {
+public class AddNewData{
+
     int systolic,diastolic, heartRate;
     String id,comment;
     Date date;
@@ -119,15 +120,5 @@ public class AddNewData implements Comparable<AddNewData> {
      */
     public Date getDate() {
         return date;
-    }
-
-    /**
-     * Compare function
-     * @param addNewData
-     * @return returns the comparison result based on date
-     */
-    @Override
-    public int compareTo(AddNewData addNewData) {
-        return this.date.compareTo(addNewData.date);
     }
 }
