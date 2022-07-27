@@ -69,6 +69,13 @@ public class Statistics extends AppCompatActivity {
         autoCompleteTextView.setAdapter(adapter);
 
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * For Getting Data from Firebase
+             * @param adapterView
+             * @param view
+             * @param i
+             * @param l
+             */
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 getdatafromfirebase(i);
@@ -78,6 +85,12 @@ public class Statistics extends AppCompatActivity {
 
         getdatafromfirebase(1);
     }
+
+    /**
+     * Shows a back button
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -91,6 +104,10 @@ public class Statistics extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * This method Fetches data from firebase
+     * @param p
+     */
     public  void getdatafromfirebase( int p)
     {
         dataList.clear();
@@ -98,6 +115,10 @@ public class Statistics extends AppCompatActivity {
         String id=firebaseAuth.getCurrentUser().getUid();
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference().child("Users").child(id);
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            /**
+             * Takes a snapshot of database
+             * @param snapshot
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren())
@@ -124,16 +145,29 @@ public class Statistics extends AppCompatActivity {
                 if(p==0)
                 {
                     Collections.sort(dataList, new Comparator<AddNewData>() {
+                        /**
+                         * Compares two AddnewData object basis on HeartRate
+                         * @param addNewData
+                         * @param t1
+                         * @return
+                         */
                         @Override
                         public int compare(AddNewData addNewData, AddNewData t1) {
                             return addNewData.getHeartRate()-t1.getHeartRate();
                         }
                     });
                 }
+
                 else if(p==1)
                 {
 
                     Collections.sort(dataList, new Comparator<AddNewData>() {
+                        /**
+                         * Compares two AddnewData object basis on Systolic
+                         * @param addNewData
+                         * @param t1
+                         * @return
+                         */
                         @Override
                         public int compare(AddNewData addNewData, AddNewData t1) {
                             return  addNewData.getSystolic()-t1.getSystolic();
@@ -143,6 +177,12 @@ public class Statistics extends AppCompatActivity {
                 else if(p==2)
                 {
                     Collections.sort(dataList, new Comparator<AddNewData>() {
+                        /**
+                         * Compares two AddnewData object basis on Diastolic
+                         * @param addNewData
+                         * @param t1
+                         * @return
+                         */
                         @Override
                         public int compare(AddNewData addNewData, AddNewData t1) {
                             return addNewData.getDiastolic()-t1.getDiastolic();
@@ -152,6 +192,12 @@ public class Statistics extends AppCompatActivity {
                 else
                 {
                     Collections.sort(dataList, new Comparator<AddNewData>() {
+                        /**
+                         * Compares two AddnewData object basis on Date
+                         * @param addNewData
+                         * @param t1
+                         * @return
+                         */
                         @Override
                         public int compare(AddNewData addNewData, AddNewData t1) {
                             return addNewData.getDate().compareTo(t1.getDate());
@@ -168,9 +214,19 @@ public class Statistics extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * Added a new data to dataList
+     * @param a
+     */
     private void initData1(AddNewData a) {
         dataList.add(a);
     }
+
+    /**
+     * Sets adapter, Layout and notify if changes
+     * @param p
+     */
 
     private void initRecyclerView1(int p) {
         recyclerView=findViewById(R.id.recyclerview);

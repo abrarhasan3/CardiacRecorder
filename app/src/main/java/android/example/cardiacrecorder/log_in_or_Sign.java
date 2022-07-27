@@ -32,6 +32,10 @@ public class log_in_or_Sign extends AppCompatActivity {
         }
 
         button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Goes to Login Page by Clicking this
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(log_in_or_Sign.this,LogInPage.class );
@@ -40,6 +44,10 @@ public class log_in_or_Sign extends AppCompatActivity {
             }
         });
         button1.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Goes to SignUpPage
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(log_in_or_Sign.this,SignUpAct.class );

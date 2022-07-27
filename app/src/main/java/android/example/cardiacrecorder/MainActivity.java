@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         new Handler().postDelayed(new Runnable() {
+            /**
+             * Intents from Splash Screen to LogInOrSignPage
+             */
             @Override
             public void run() {
                 Intent intent =new Intent(MainActivity.this, log_in_or_Sign.class);

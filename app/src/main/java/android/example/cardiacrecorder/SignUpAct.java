@@ -31,6 +31,10 @@ public class SignUpAct extends AppCompatActivity {
         FirebaseAuth mAuth=FirebaseAuth.getInstance();
 
         button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * SignUp to Firebase
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 String pass=passwordEdit.getText().toString().trim();
@@ -60,6 +64,10 @@ public class SignUpAct extends AppCompatActivity {
                 else
                 {
                     mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        /**
+                         * if signup successful this method takes user to homepage
+                         * @param task
+                         */
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful())

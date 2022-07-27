@@ -31,14 +31,22 @@ public class LogInPage extends AppCompatActivity {
 
         textView.setPaintFlags(textView.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
                 textView.setOnClickListener(new View.OnClickListener() {
+                    /**
+                     * Forget Password Method
+                     * @param view
+                     */
             @Override
             public void onClick(View view) {
-                Toast.makeText(LogInPage.this, "HI",Toast.LENGTH_SHORT).show();
+
 
             }
 
         });
         button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * LogIn Page Intent Method
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 String mail=editText.getText().toString().trim();
@@ -56,6 +64,10 @@ public class LogInPage extends AppCompatActivity {
                 else
                 {
                     mAuth.signInWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        /**
+                         * if user is Authorized the method Takes user to LogIn Page.
+                         * @param task
+                         */
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful())

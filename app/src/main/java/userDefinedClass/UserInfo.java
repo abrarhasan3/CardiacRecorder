@@ -10,14 +10,26 @@ public class UserInfo {
         this.weight = weight;
     }
 
+    /**
+     *
+     * @return returns the name of User
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return returns height of User
+     */
     public float getHeight() {
         return height;
     }
 
+    /**
+     *
+     * @return returns the weight of User
+     */
     public float getWeight() {
         return weight;
     }
