@@ -35,6 +35,9 @@ import java.util.List;
 
 import userDefinedClass.AddNewData;
 
+/**
+ * Adapter Class to show data to RecyclerView
+ */
 public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> {
     List<AddNewData> DataList;
     Context context;
@@ -43,6 +46,16 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
         DataList = dataList;
         this.context = context;
     }
+    public Adapter_Stat(List<AddNewData> dataList) {
+        DataList = dataList;
+    }
+
+    /**
+     * On Create ViewHolder method is Used to set the layout of Each List and bind it.
+     * @param parent
+     * @param viewType
+     * @return Adapter_Stat.ViewHolder
+     */
 
     @NonNull
     @Override
@@ -53,11 +66,22 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
 
     }
 
+    /**
+     * This method shows the data and set other backend code for each List Item in recycler View.
+     * @param holder
+     * @param position
+     */
+
     @Override
     public void onBindViewHolder(@NonNull Adapter_Stat.ViewHolder holder, int position) {
         holder.setData(DataList.get(position));
         ImageView imageView=holder.delete;
+
         imageView.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This is for deleting a data from recycle View.
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder alert=new AlertDialog.Builder(context);
@@ -65,6 +89,11 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
                 alert.setTitle("Delete Confirmation");
                  alert.setMessage("Are You Sure to Delete?");
                 alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    /**
+                     * if yes is clicked from alertDialog data is deleted
+                     * @param dialogInterface
+                     * @param i
+                     */
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -77,6 +106,11 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
                         notifyItemRemoved(holder.getAdapterPosition());
                     }
                 }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    /**
+                     * If no is selected AlertDialog is canceled.
+                     * @param dialogInterface
+                     * @param i
+                     */
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
@@ -88,11 +122,12 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
         });
         ImageView imageView1=holder.edit;
         imageView1.setOnClickListener(new View.OnClickListener() {
+            /**
+             * If edit is User Can edit the item
+             * @param view
+             */
             @Override
             public void onClick(View view) {
-
-
-
 
                 //Toast.makeText(context, "EDIT  "+holder.getAdapterPosition(), Toast.LENGTH_SHORT).show();
                 String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -124,6 +159,10 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
                 dropdown.setAdapter(adapter1);
                 Button button1=dialog.findViewById(R.id.Cancel);
                 button1.setOnClickListener(new View.OnClickListener() {
+                    /**
+                     * This Dismiss the dialog
+                     * @param view
+                     */
                     @Override
                     public void onClick(View view) {
 
@@ -132,6 +171,10 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
                 });
                 Button button2=dialog.findViewById(R.id.Add);
                 button2.setOnClickListener(new View.OnClickListener() {
+                    /**
+                     * This Updates The value.
+                     * @param view
+                     */
                     @Override
                     public void onClick(View view) {
 
@@ -453,10 +496,18 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
 
     }
 
+    /**
+     * Returns the item count
+     * @return int
+     */
     @Override
     public int getItemCount() {
         return DataList.size();
     }
+
+    /**
+     * Sets the Texts and Images in View.
+     */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView delete=itemView.findViewById(R.id.DeleteButton);
         ImageView edit=itemView.findViewById(R.id.EditButton);
@@ -468,11 +519,18 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
         TextView txthr=itemView.findViewById(R.id.ItemHeartRate);
         TextView txtcom=itemView.findViewById(R.id.listComment);
 
-
+        /**
+         * 
+         * @param itemView
+         */
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
         }
 
+        /**
+         * User Defined Class for setting Data
+         * @param obj1
+         */
         public void setData(AddNewData obj1)
         {
 

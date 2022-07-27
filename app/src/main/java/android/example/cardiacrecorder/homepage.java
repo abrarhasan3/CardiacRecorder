@@ -32,6 +32,7 @@ import userDefinedClass.AddNewData;
 public class homepage extends AppCompatActivity {
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,10 @@ public class homepage extends AppCompatActivity {
         Button stat= findViewById(R.id.button3);
 
         button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Button for add new Data
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 Dialog dialog=new Dialog(homepage.this);
@@ -54,6 +59,10 @@ public class homepage extends AppCompatActivity {
 
                 Button button1=dialog.findViewById(R.id.Cancel);
                 button1.setOnClickListener(new View.OnClickListener() {
+                    /**
+                     * Cancels the Dialog
+                     * @param view
+                     */
                     @Override
                     public void onClick(View view) {
 
@@ -64,6 +73,10 @@ public class homepage extends AppCompatActivity {
 
                 Button button2=dialog.findViewById(R.id.Add);
                 button2.setOnClickListener(new View.OnClickListener() {
+                    /**\
+                     * Adds new Data
+                     * @param view
+                     */
                     @Override
                     public void onClick(View view) {
 
@@ -274,6 +287,10 @@ public class homepage extends AppCompatActivity {
         });
 
         stat.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Goes to Statistic Page
+             * @param view
+             */
             @Override
             public void onClick(View view) {
 
