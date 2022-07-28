@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
 
         // Animations For SplashScreen
         topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
