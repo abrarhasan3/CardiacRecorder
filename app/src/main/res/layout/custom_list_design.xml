@@ -4,6 +4,52 @@
     android:layout_height="wrap_content"
     >
 
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+
+        >
+
+        <ImageView
+            android:id="@+id/alertImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+
+             />
+        <TextView
+            android:id="@+id/good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alertImage"
+            android:visibility="gone"
+            android:textColor="@color/greenlite"
+            android:text="Healthy!"/>
+
+        <TextView
+            android:id="@+id/highsystolic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/alertImage"
+            android:visibility="gone"
+            android:textColor="@color/red"
+            android:text="High Systolic!" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High Diastolic!"
+            android:visibility="gone"
+            android:textColor="@color/red"
+            android:id="@+id/highdiastolic"
+
+            android:layout_below="@+id/highsystolic"
+            />
+    </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/listllheart"
         android:layout_width="match_parent"
@@ -27,9 +73,11 @@
 
     <LinearLayout
         android:id="@+id/listll1"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/listllheart"
+
         android:orientation="horizontal">
 
         <TextView
@@ -51,6 +99,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@id/listll1"
+        android:layout_marginTop="5dp"
         android:id="@+id/listll2">
 
         <TextView
@@ -75,6 +124,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/listll2"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -99,6 +149,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/listllcomment"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -117,6 +168,7 @@
 
     <RelativeLayout
         android:id="@+id/listll4"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/listll3"
