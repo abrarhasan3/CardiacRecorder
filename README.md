@@ -7,3 +7,5 @@ As people becoming more and more health conscious, keeping track of one's heart 
 'CardiacRecorder' has a very intuitive UI, lots of features and a convinient experience to offer to its users. It has the ultimate capabilities to become a person's ultimate heart assistant!
 
 * Below are some screenshots of the app:
+
+* More details about this android application project can be found <a href="https://github.com/abrarhasan3/CardiacRecorder/wiki">here</a>
