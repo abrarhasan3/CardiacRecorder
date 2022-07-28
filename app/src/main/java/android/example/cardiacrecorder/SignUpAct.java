@@ -1,6 +1,7 @@
 package android.example.cardiacrecorder;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -35,6 +37,11 @@ public class SignUpAct extends AppCompatActivity {
         EditText passwordEdit=findViewById(R.id.pass_edit1);
         EditText confirmEdit=findViewById(R.id.editpass2);
         Button button=findViewById(R.id.SignUp_2);
+        ActionBar actionBar = getSupportActionBar();
+
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
         FirebaseAuth mAuth=FirebaseAuth.getInstance();
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources()
                 .getColor(R.color.S_Action)));
@@ -43,6 +50,8 @@ public class SignUpAct extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.parseColor("#05828c"));
         }
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             /**
@@ -99,7 +108,7 @@ public class SignUpAct extends AppCompatActivity {
 
                                 UserInfo userInfo=new UserInfo(name,height_f,weight_f);
 
-                                reference.child("Personal").child(id).child("Height").setValue(userInfo);
+                                reference.child("Personal").child(id).setValue(userInfo);
                                 Intent intent=new Intent(SignUpAct.this,homepage.class);
                                 startActivity(intent);
                                 finish();
@@ -113,5 +122,22 @@ public class SignUpAct extends AppCompatActivity {
                 }
             }
         });
+    }
+    /**
+     * Shows a back button
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent=new Intent(SignUpAct.this,log_in_or_Sign.class);
+                startActivity(intent);
+                this.finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
