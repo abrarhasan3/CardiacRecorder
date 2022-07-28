@@ -4,8 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import userDefinedClass.UserInfo;
 
 public class SignUpAct extends AppCompatActivity {
 
@@ -29,6 +36,13 @@ public class SignUpAct extends AppCompatActivity {
         EditText confirmEdit=findViewById(R.id.editpass2);
         Button button=findViewById(R.id.SignUp_2);
         FirebaseAuth mAuth=FirebaseAuth.getInstance();
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources()
+                .getColor(R.color.S_Action)));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.parseColor("#05828c"));
+        }
 
         button.setOnClickListener(new View.OnClickListener() {
             /**
@@ -77,8 +91,15 @@ public class SignUpAct extends AppCompatActivity {
                                 String id=FirebaseAuth.getInstance().getCurrentUser().getUid();
                                 EditText editText=findViewById(R.id.editheight);
                                 EditText editText1=findViewById(R.id.Weight);
+                                EditText e=findViewById(R.id.name);
 
-                                //reference.child("User").child(id).child("Height").setValue();
+                                float height_f=Float.parseFloat(editText.getText().toString().trim());
+                                float weight_f=Float.parseFloat(editText1.getText().toString().trim());
+                                String name=e.getText().toString().trim();
+
+                                UserInfo userInfo=new UserInfo(name,height_f,weight_f);
+
+                                reference.child("Personal").child(id).child("Height").setValue(userInfo);
                                 Intent intent=new Intent(SignUpAct.this,homepage.class);
                                 startActivity(intent);
                                 finish();

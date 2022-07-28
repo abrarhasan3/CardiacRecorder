@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Pink_Login">#ff5055</color>
     <color name="P_L12">#fea386</color>
+    <color name="S_Action">#01d5fd</color>
+    <color name="LogInAction">#cccccc</color>
+    <color name="red">#dd1b1b</color>
+    <color name="greenlite">#69d543</color>
 </resources>

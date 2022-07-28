@@ -519,6 +519,10 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
         TextView txthr=itemView.findViewById(R.id.ItemHeartRate);
         TextView txtcom=itemView.findViewById(R.id.listComment);
 
+        ImageView alert=itemView.findViewById(R.id.alertImage);
+        TextView txtsd=itemView.findViewById(R.id.highsystolic);
+        TextView txthd=itemView.findViewById(R.id.highdiastolic);
+        TextView txtnorm=itemView.findViewById(R.id.good);
         /**
          * 
          * @param itemView
@@ -538,7 +542,48 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
               diastolic.setText(""+obj1.getDiastolic());
               txthr.setText(""+obj1.getHeartRate());
               txtcom.setText(""+obj1.getComment());
+
+
+              if(obj1.getSystolic()>85)
+              {
+                  if(obj1.getDiastolic()>150)
+                  {
+                      alert.setBackgroundResource(R.drawable.alert);
+                      txtsd.setVisibility(View.VISIBLE);
+                      txthd.setVisibility(View.VISIBLE);
+                      txtnorm.setVisibility(View.GONE);
+                  }
+                  else
+                  {
+                      alert.setBackgroundResource(R.drawable.alert);
+                      txtsd.setVisibility(View.VISIBLE);
+                      txtnorm.setVisibility(View.GONE);
+                      txthd.setVisibility(View.GONE);
+
+                  }
+              }
+              else
+              {
+                  if(obj1.getDiastolic()>150)
+                  {
+                      alert.setBackgroundResource(R.drawable.alert);
+                      txthd.setVisibility(View.VISIBLE);
+                      txtnorm.setVisibility(View.GONE);
+                      txtsd.setVisibility(View.GONE);
+                  }
+                  else
+                  {
+                      alert.setBackgroundResource(R.drawable.varified);
+                      txtnorm.setVisibility(View.VISIBLE);
+                      txtsd.setVisibility(View.GONE);
+                      txthd.setVisibility(View.GONE);
+                  }
+              }
+
+
+
               SimpleDateFormat dateFormat1=new SimpleDateFormat("dd.MM.yyyy");
+
 
 
               String datestr=dateFormat1.format(obj1.getDate());
@@ -566,6 +611,7 @@ public class Adapter_Stat extends RecyclerView.Adapter<Adapter_Stat.ViewHolder> 
                 timestr=""+(hour_int-12)+":"+mm.format(obj1.getDate())+":"+"PM";
             }
             time.setText(timestr);
+
 
 
 //            this.time.setText(obj1.getTime());
