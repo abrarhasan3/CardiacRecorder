@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back2"
     tools:context=".Statistics">
 
 
@@ -13,8 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:text="USER DATA"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="20sp"
 
         />
@@ -55,8 +58,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
-
-
 
 
     <androidx.recyclerview.widget.RecyclerView
