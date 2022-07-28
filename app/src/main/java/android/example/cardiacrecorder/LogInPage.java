@@ -1,6 +1,7 @@
 package android.example.cardiacrecorder;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -32,6 +34,12 @@ public class LogInPage extends AppCompatActivity {
         EditText editText=findViewById(R.id.EMAIL);
         EditText editText1=findViewById(R.id.editText2);
         Button button=findViewById(R.id.Login);
+
+        ActionBar actionBar = getSupportActionBar();
+
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
         FirebaseAuth mAuth=FirebaseAuth.getInstance();
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources()
@@ -99,5 +107,22 @@ public class LogInPage extends AppCompatActivity {
                 }
             }
         });
+    }
+    /**
+     * Shows a back button
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent=new Intent(LogInPage.this,log_in_or_Sign.class);
+                startActivity(intent);
+                this.finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
