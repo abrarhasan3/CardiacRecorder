@@ -47,7 +47,7 @@ public class homepageUITest {
     public void testHomePage()
     {
         onView(withId(R.id.homepage)).check(matches(isDisplayed()));
-        onView(withId(R.id.cardView)).check(matches(isDisplayed()));
+       onView(withId(R.id.CardView)).check(matches(isDisplayed()));
         onView(withId(R.id.textView4)).check(matches(isDisplayed()));
         onView(withId(R.id.TxtSystole)).check(matches(isDisplayed()));
         onView(withId(R.id.ProgressSystole)).check(matches(isDisplayed()));
@@ -55,18 +55,16 @@ public class homepageUITest {
         onView(withId(R.id.textView6)).check(matches(isDisplayed()));
         onView(withId(R.id.textView7)).check(matches(isDisplayed()));
         onView(withId(R.id.TxtDayastole)).check(matches(isDisplayed()));
-        onView(withId(R.id.ll3)).check(matches(isDisplayed()));
-        onView(withId(R.id.cardView3)).check(matches(isDisplayed()));
-        onView(withId(R.id.BMIText)).check(matches(isDisplayed()));
-        onView(withId(R.id.BMINumber)).check(matches(isDisplayed()));
-        onView(withId(R.id.cardView2)).check(matches(isDisplayed()));
-        onView(withId(R.id.tt1)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView5)).check(matches(isDisplayed()));
 
-        // Scrolling down to the bottom of the page
         Espresso.onView(ViewMatchers.withId(R.id.homepage)).perform(ViewActions.swipeUp());
 
         onView(withId(R.id.add_new)).check(matches(isDisplayed()));
         onView(withId(R.id.button3)).check(matches(isDisplayed()));
+        onView(withId(R.id.add_new)).perform(click());
+        onView(withText("ADD NEW DATA")).check(matches(isDisplayed()));
+        onView(withId(R.id.heartrate)).check(matches(isDisplayed()));
+        onView(withId(R.id.systolic)).check(matches(isDisplayed()));
+        onView(withId(R.id.diastole)).check(matches(isDisplayed()));
+        onView(withId(R.id.comment)).check(matches(isDisplayed()));
     }
 }

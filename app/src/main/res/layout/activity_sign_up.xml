@@ -178,9 +178,9 @@
                 android:layout_width="232dp"
                 android:layout_height="54dp"
                 android:layout_below="@id/ll2"
-                android:layout_marginTop="20dp"
-
                 android:layout_centerHorizontal="true"
+
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@android:color/background_dark"
                 android:text="Signup"
                 app:cornerRadius="50dp"

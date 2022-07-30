@@ -4,6 +4,7 @@ package android.example.cardiacrecorder;
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -46,11 +47,15 @@ public class LogInPageUITest {
             new ActivityScenarioRule<>(LogInPage.class);
 
     @Test
-    public void testLogInPage(){
+    public void testLogInPage() {
         onView(withId(R.id.loginActivity)).check(matches(isDisplayed()));
-        onView(withId(R.id.email)).check(matches(isDisplayed()));
+        onView(withId(R.id.EMAIL)).check(matches(isDisplayed()));
         onView(withId(R.id.editTextTextPassword)).check(matches(isDisplayed()));
         onView(withId(R.id.Login)).check(matches(isDisplayed()));
         onView(withId(R.id.forget)).check(matches(isDisplayed()));
+        onView(withId(R.id.EMAIL)).perform(typeText("user@gmail.com"));
+        onView(withId(R.id.editText2)).perform(typeText("123456"));
+        Espresso.pressBack();
+        onView(withId(R.id.Login)).perform(click());
     }
 }

@@ -46,11 +46,10 @@ public class StatisticsUITest {
     @Test
     public void testStatistics(){
         onView(withId(R.id.relView)).check(matches(isDisplayed()));
-//        onView(withId(R.id.UserData)).check(matches(isDisplayed()));
-//        onView(withId(R.id.line)).check(matches(isDisplayed()));
-//        onView(withId(R.id.llstat1)).check(matches(isDisplayed()));
-//        onView(withId(R.id.menu_drop)).check(matches(isDisplayed()));
-//        onView(withId(R.id.drop_item)).check(matches(isDisplayed()));
-//        onView(withId(R.id.recyclerview)).check(matches(isDisplayed()));
+        onView(withId(R.id.UserData)).check(matches(isDisplayed()));
+        onView(withId(R.id.line)).check(matches(isDisplayed()));
+        onView(withId(R.id.menu_drop)).check(matches(isDisplayed()));
+        onView(withId(R.id.drop_item)).check(matches(isDisplayed()));
+        onView(withId(R.id.drop_item)).perform(click());
     }
 }

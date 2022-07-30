@@ -50,5 +50,6 @@ public class log_in_or_SignUITest {
         onView(withId(R.id.login_button)).check(matches(isDisplayed()));
         onView(withId(R.id.imageView)).check(matches(isDisplayed()));
         onView(withId(R.id.textView)).check(matches(isDisplayed()));
+
     }
 }
